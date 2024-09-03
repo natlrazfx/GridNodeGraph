@@ -1,0 +1,18 @@
+# Natalia Raz
+
+import nuke
+
+# Get the current value of the 'show_grid' parameter
+current_show_grid = nuke.toNode('preferences').knob('show_grid').value()
+
+# Toggle the value
+new_show_grid = not current_show_grid
+
+# Set the new value
+nuke.toNode('preferences').knob('show_grid').setValue(new_show_grid)
+
+# Print the result
+if new_show_grid:
+    print("Grid is now ON")
+else:
+    print("Grid is now OFF")
